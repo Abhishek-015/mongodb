@@ -1,0 +1,204 @@
+Microsoft Windows [Version 10.0.19042.1237]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\ABHISHEK>mongo
+MongoDB shell version v5.0.2
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("825a6060-53c2-48bf-bd7f-cbf331a8156f") }
+MongoDB server version: 5.0.2
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+We recommend you begin using "mongosh".
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2021-09-17T15:04:44.663+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> dbs
+uncaught exception: ReferenceError: dbs is not defined :
+@(shell):1:1
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> use abhishek
+switched to db abhishek
+> db.drop()
+uncaught exception: TypeError: db.drop is not a function :
+@(shell):1:1
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> use abhishek
+switched to db abhishek
+> show collections
+> db.createCollection("asssignment")
+{ "ok" : 1 }
+> db.drop()
+uncaught exception: TypeError: db.drop is not a function :
+@(shell):1:1
+> db.assignments.drop()
+false
+> db.assignment.drop()
+false
+> db.asssignment.drop()
+true
+> shoe dbs
+uncaught exception: SyntaxError: unexpected token: identifier :
+@(shell):1:5
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> db.users.insert({first_name:"abhishek",last_name:"singh",email:"abhishek404singh@gmail.com",gender:"male",ip_adss})
+uncaught exception: ReferenceError: ip_adss is not defined :mail:"abhishek404singh@gmail.com",gender:"male",ip_address})
+@(shell):1:107ert({first_name:"abhishek",last_name:"singh",email:"abhishek404singh@gmail.com",gender:"male",ip_add{ress})
+> db.users.insert({first_name:"abhishek",last_name:"singh",email:"abhishek404singh@gmail.com",gender:"male",ip_address})
+> db.users.insert({first_name:"abhishek",last_name:"singh",email:"abhishek404singh@gmail.com",gender:"male",ip_adsress})
+>
+>
+> db.users.insert({first_name:"abhishek",last_name:"singh",email:"abhishek404singh@gmail.com",gender:"male",ip_address:"123456789",age:"27"})
+WriteResult({ "nInserted" : 1 })
+> db.users.find()
+{ "_id" : ObjectId("6145cb85460a11583cdaaa27"), "first_name" : "abhishek", "last_name" : "singh", "email" : "abhishek404singh@gmail.com", "gender" : "male", "ip_address" : "123456789", "age" : "27" }
+> db.users.find({"last_name" : "singh"})
+{ "_id" : ObjectId("6145cb85460a11583cdaaa27"), "first_name" : "abhishek", "last_name" : "singh", "email" : "abhishek404singh@gmail.com", "gender" : "male", "ip_address" : "123456789", "age" : "27" }
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("6145cb85460a11583cdaaa27"),
+        "first_name" : "abhishek",
+        "last_name" : "singh",
+        "email" : "abhishek404singh@gmail.com",
+        "gender" : "male",
+        "ip_address" : "123456789",
+        "age" : "27"
+}
+> db.users.insertMany([{lang1:"java"},{lang2:"mysql"},{lang3:"java"},{lang4:"mongodb"},{lang4:"javascript"},{lang2:"react"},{lang5:"mongo"},{lang6:"c"},{lang7:"c++"},{lang8:"css"},{lang9:"html"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("6145e383460a11583cdaaa28"),
+                ObjectId("6145e383460a11583cdaaa29"),
+                ObjectId("6145e383460a11583cdaaa2a"),
+                ObjectId("6145e383460a11583cdaaa2b"),
+                ObjectId("6145e383460a11583cdaaa2c"),
+                ObjectId("6145e383460a11583cdaaa2d"),
+                ObjectId("6145e383460a11583cdaaa2e"),
+                ObjectId("6145e383460a11583cdaaa2f"),
+                ObjectId("6145e383460a11583cdaaa30"),
+                ObjectId("6145e383460a11583cdaaa31"),
+                ObjectId("6145e383460a11583cdaaa32")
+        ]
+}
+> db.users.find()
+{ "_id" : ObjectId("6145cb85460a11583cdaaa27"), "first_name" : "abhishek", "last_name" : "singh", "email" : "abhishek404singh@gmail.com", "gender" : "male", "ip_address" : "123456789", "age" : "27" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa28"), "lang1" : "java" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa29"), "lang2" : "mysql" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2a"), "lang3" : "java" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2b"), "lang4" : "mongodb" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2c"), "lang4" : "javascript" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2d"), "lang2" : "react" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2e"), "lang5" : "mongo" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2f"), "lang6" : "c" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa30"), "lang7" : "c++" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa31"), "lang8" : "css" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa32"), "lang9" : "html" }
+> db.users.findOne({lang1:"java"})
+{ "_id" : ObjectId("6145e383460a11583cdaaa28"), "lang1" : "java" }
+> db.users.find({lang2})
+uncaught exception: ReferenceError: lang2 is not defined :
+@(shell):1:16
+> db.users.update({"_id" : ObjectId("6145e383460a11583cdaaa30")},{$set:{lang7:"yahoo"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.users.find()
+{ "_id" : ObjectId("6145cb85460a11583cdaaa27"), "first_name" : "abhishek", "last_name" : "singh", "email" : "abhishek404singh@gmail.com", "gender" : "male", "ip_address" : "123456789", "age" : "27" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa28"), "lang1" : "java" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa29"), "lang2" : "mysql" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2a"), "lang3" : "java" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2b"), "lang4" : "mongodb" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2c"), "lang4" : "javascript" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2d"), "lang2" : "react" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2e"), "lang5" : "mongo" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2f"), "lang6" : "c" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa30"), "lang7" : "yahoo" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa31"), "lang8" : "css" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa32"), "lang9" : "html" }
+> db.users.update({"_id" : ObjectId("6145e383460a11583cdaaa29")},{$set:{lang2:"react"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.users.find()
+{ "_id" : ObjectId("6145cb85460a11583cdaaa27"), "first_name" : "abhishek", "last_name" : "singh", "email" : "abhishek404singh@gmail.com", "gender" : "male", "ip_address" : "123456789", "age" : "27" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa28"), "lang1" : "java" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa29"), "lang2" : "react" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2a"), "lang3" : "java" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2b"), "lang4" : "mongodb" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2c"), "lang4" : "javascript" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2d"), "lang2" : "react" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2e"), "lang5" : "mongo" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2f"), "lang6" : "c" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa30"), "lang7" : "yahoo" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa31"), "lang8" : "css" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa32"), "lang9" : "html" }
+> db.users.updateMany({lang2:"react"},{$set:{lang2:"mysql"}})
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+> db.users.find()
+{ "_id" : ObjectId("6145cb85460a11583cdaaa27"), "first_name" : "abhishek", "last_name" : "singh", "email" : "abhishek404singh@gmail.com", "gender" : "male", "ip_address" : "123456789", "age" : "27" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa28"), "lang1" : "java" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa29"), "lang2" : "mysql" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2a"), "lang3" : "java" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2b"), "lang4" : "mongodb" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2c"), "lang4" : "javascript" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2d"), "lang2" : "mysql" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2e"), "lang5" : "mongo" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2f"), "lang6" : "c" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa30"), "lang7" : "yahoo" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa31"), "lang8" : "css" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa32"), "lang9" : "html" }
+> db.users.delete({"_id" : ObjectId("6145e383460a11583cdaaa30")})
+uncaught exception: TypeError: db.users.delete is not a function :
+@(shell):1:1
+> db.users.remove({"_id" : ObjectId("6145e383460a11583cdaaa30")})
+WriteResult({ "nRemoved" : 1 })
+> db.users.find()
+{ "_id" : ObjectId("6145cb85460a11583cdaaa27"), "first_name" : "abhishek", "last_name" : "singh", "email" : "abhishek404singh@gmail.com", "gender" : "male", "ip_address" : "123456789", "age" : "27" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa28"), "lang1" : "java" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa29"), "lang2" : "mysql" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2a"), "lang3" : "java" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2b"), "lang4" : "mongodb" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2c"), "lang4" : "javascript" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2d"), "lang2" : "mysql" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2e"), "lang5" : "mongo" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2f"), "lang6" : "c" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa31"), "lang8" : "css" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa32"), "lang9" : "html" }
+> db.users.deleteMany({lang2:"mysql"})
+{ "acknowledged" : true, "deletedCount" : 2 }
+> db.users.find()
+{ "_id" : ObjectId("6145cb85460a11583cdaaa27"), "first_name" : "abhishek", "last_name" : "singh", "email" : "abhishek404singh@gmail.com", "gender" : "male", "ip_address" : "123456789", "age" : "27" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa28"), "lang1" : "java" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2a"), "lang3" : "java" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2b"), "lang4" : "mongodb" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2c"), "lang4" : "javascript" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2e"), "lang5" : "mongo" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa2f"), "lang6" : "c" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa31"), "lang8" : "css" }
+{ "_id" : ObjectId("6145e383460a11583cdaaa32"), "lang9" : "html" }
+> db.dropDatabase()
+{ "ok" : 1 }
+> db.users.find()
+>
